@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/script.js"></script>
+</head>
+<body>
+  <%- include ('partials/header') %>
+
+  <!-- CREATE NEW TASK -->
+  <section class="create-box">
+    <form action="/tasks" method="POST" id="createForm">
+      <input name="text" id="taskInput" placeholder="Add a new task…" autocomplete="off" />
+      <select name="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+  </section>
+
+  <!-- TASK LIST -->
+  <ul class="task-list">
+    <% if (tasks.length === 0) { %>
+      <li class="empty">No tasks to show.</li>
+    <% } %>
+    <% tasks.forEach(t => { %>
+      <li class="<%= t.completed ? 'done' : '' %>">
+        <form action="/tasks/<%= t.id %>?_method=PATCH" method="POST" class="inline">
+          <button type="submit" class="check"><input type="checkbox" <%= t.completed?'checked':'' %> /></button>
+        </form>
+
+        <div class="content">
+          <span><%= t.text %></span>
+          <small class="badge <%= t.priority %>"><%= t.priority %></small>
+        </div>
+
+        <!-- EDIT & DELETE BUTTONS -->
+        <button data-edit="<%= t.id %>" class="edit">✏️</button>
+        <form action="/tasks/<%= t.id %>?_method=DELETE" method="POST" class="inline">
+          <button class="delete">🗑️</button>
+        </form>
+
+        <!-- HIDDEN EDIT FORM -->
+        <form action="/tasks/<%= t.id %>?_method=PUT" method="POST" class="edit-form" id="form-<%= t.id %>">
+          <input name="text" value="<%= t.text %>" required />
+          <select name="priority">
+            <option value="low"    <%= t.priority==='low'?'selected':'' %>>Low</option>
+            <option value="medium" <%= t.priority==='medium'?'selected':'' %>>Medium</option>
+            <option value="high"   <%= t.priority==='high'?'selected':'' %>>High</option>
+          </select>
+          <button>Save</button>
+          <button type="button" data-cancel="<%= t.id %>">Cancel</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+
+  <%- include ('partials/footer') %>
+</body>
+</html>

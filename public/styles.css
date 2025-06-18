@@ -1,0 +1,42 @@
+/* ---------- BASIC LAYOUT ---------- */
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,Arial,sans-serif}
+body{min-height:100vh;display:flex;flex-direction:column;background:#f6f7fb}
+.header,.footer{background:#1e1e2e;color:#fff;padding:1rem 2rem}
+.header h1{margin-bottom:.5rem}
+.header nav a{color:#fff;margin-right:.8rem;text-decoration:none;font-size:.9rem}
+.header nav a.active{font-weight:700;text-decoration:underline}
+.footer{text-align:center;margin-top:auto;font-size:.8rem}
+
+/* ---------- CREATE BOX ---------- */
+.create-box{background:#fff;padding:1rem 2rem;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.create-box form{display:flex;gap:.6rem;flex-wrap:wrap}
+.create-box input{flex:1 1 220px;padding:.6rem;border:1px solid #ccc;border-radius:4px}
+.create-box select,.create-box button{padding:.6rem;border:none;border-radius:4px}
+.create-box button{background:#0066ff;color:#fff;cursor:pointer}
+.create-box button:hover{opacity:.9}
+
+/* ---------- TASK LIST ---------- */
+.task-list{list-style:none;padding:1rem 2rem;display:flex;flex-direction:column;gap:.6rem}
+.task-list li{background:#fff;display:flex;align-items:center;padding:.8rem 1rem;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.task-list li.done .content span{text-decoration:line-through;opacity:.5}
+.inline{display:inline}
+.check{background:none;border:none;margin-right:.6rem;cursor:pointer}
+.content{flex:1;display:flex;align-items:center;gap:.6rem}
+.badge{padding:.1rem .45rem;border-radius:4px;font-size:.75rem;text-transform:capitalize;color:#fff}
+.badge.low{background:#4caf50}.badge.medium{background:#ff9800}.badge.high{background:#f44336}
+.edit,.delete{background:none;border:none;font-size:1.1rem;cursor:pointer;margin-left:.4rem}
+.edit:hover,.delete:hover{opacity:.7}
+
+.edit-form{display:none;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.edit-form input{flex:1 1 200px;padding:.4rem;border:1px solid #bbb;border-radius:4px}
+.edit-form select,.edit-form button{padding:.4rem;border:none;border-radius:4px}
+.edit-form button{background:#0066ff;color:#fff;cursor:pointer}
+.edit-form [type="button"]{background:#999}
+
+.empty{text-align:center;color:#666}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:600px){
+  .create-box form{flex-direction:column}
+  .edit-form{flex-direction:column}
+}

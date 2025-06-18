@@ -1,0 +1,9 @@
+<header class="header">
+  <h1>📝Todo List</h1>
+  <nav>
+    <a href="/" class="<%= !priority ? 'active' : '' %>">All</a>
+    <a href="/?priority=high"   class="<%= priority==='high'   ? 'active' : '' %>">High</a>
+    <a href="/?priority=medium" class="<%= priority==='medium' ? 'active' : '' %>">Medium</a>
+    <a href="/?priority=low"    class="<%= priority==='low'    ? 'active' : '' %>">Low</a>
+  </nav>
+</header>
