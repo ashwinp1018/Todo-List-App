@@ -5,6 +5,7 @@ import { v4 as uuid } from "uuid";
 
 const __dirname = path.resolve();
 const app = express();
+const port = process.env.PORT || 8000;
 
 // View engine & static files
 app.set("view engine", "ejs");
