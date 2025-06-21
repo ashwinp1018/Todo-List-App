@@ -7,19 +7,19 @@ const __dirname = path.resolve();
 const app = express();
 const port = process.env.PORT || 8000;
 
-// View engine & static files
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-// In-memory “database”
-let tasks = [];          // { id, text, priority, completed }
 
-//---------- ROUTES ---------------------------------
+let tasks = [];          
+
+
 app.get("/", (req, res) => {
-  const { priority } = req.query;          // filter ?priority=high|medium|low
+  const { priority } = req.query;          
   const shown = priority ? tasks.filter(t => t.priority === priority) : tasks;
   res.render("index", { tasks: shown, priority });
 });
