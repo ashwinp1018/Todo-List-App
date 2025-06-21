@@ -10,7 +10,7 @@
 <body>
   <%- include ('partials/header') %>
 
-  <!-- CREATE NEW TASK -->
+  
   <section class="create-box">
     <form action="/tasks" method="POST" id="createForm">
       <input name="text" id="taskInput" placeholder="Add a new task…" autocomplete="off" />
@@ -23,7 +23,7 @@
     </form>
   </section>
 
-  <!-- TASK LIST -->
+  
   <ul class="task-list">
     <% if (tasks.length === 0) { %>
       <li class="empty">No tasks to show.</li>
@@ -39,13 +39,13 @@
           <small class="badge <%= t.priority %>"><%= t.priority %></small>
         </div>
 
-        <!-- EDIT & DELETE BUTTONS -->
+       
         <button data-edit="<%= t.id %>" class="edit">✏️</button>
         <form action="/tasks/<%= t.id %>?_method=DELETE" method="POST" class="inline">
           <button class="delete">🗑️</button>
         </form>
 
-        <!-- HIDDEN EDIT FORM -->
+        
         <form action="/tasks/<%= t.id %>?_method=PUT" method="POST" class="edit-form" id="form-<%= t.id %>">
           <input name="text" value="<%= t.text %>" required />
           <select name="priority">
