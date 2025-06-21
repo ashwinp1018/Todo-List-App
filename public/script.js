@@ -1,4 +1,4 @@
-// Client-side helpers (alert on empty input & toggle edit forms)
+
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("taskInput");
   document.getElementById("createForm").addEventListener("submit", e => {
