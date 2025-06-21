@@ -1,4 +1,4 @@
-/* ---------- BASIC LAYOUT ---------- */
+
 *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,Arial,sans-serif}
 body{min-height:100vh;display:flex;flex-direction:column;background:#f6f7fb}
 .header,.footer{background:#1e1e2e;color:#fff;padding:1rem 2rem}
@@ -7,7 +7,7 @@ body{min-height:100vh;display:flex;flex-direction:column;background:#f6f7fb}
 .header nav a.active{font-weight:700;text-decoration:underline}
 .footer{text-align:center;margin-top:auto;font-size:.8rem}
 
-/* ---------- CREATE BOX ---------- */
+
 .create-box{background:#fff;padding:1rem 2rem;box-shadow:0 2px 6px rgba(0,0,0,.05)}
 .create-box form{display:flex;gap:.6rem;flex-wrap:wrap}
 .create-box input{flex:1 1 220px;padding:.6rem;border:1px solid #ccc;border-radius:4px}
@@ -15,7 +15,7 @@ body{min-height:100vh;display:flex;flex-direction:column;background:#f6f7fb}
 .create-box button{background:#0066ff;color:#fff;cursor:pointer}
 .create-box button:hover{opacity:.9}
 
-/* ---------- TASK LIST ---------- */
+
 .task-list{list-style:none;padding:1rem 2rem;display:flex;flex-direction:column;gap:.6rem}
 .task-list li{background:#fff;display:flex;align-items:center;padding:.8rem 1rem;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .task-list li.done .content span{text-decoration:line-through;opacity:.5}
@@ -35,7 +35,7 @@ body{min-height:100vh;display:flex;flex-direction:column;background:#f6f7fb}
 
 .empty{text-align:center;color:#666}
 
-/* ---------- RESPONSIVE ---------- */
+
 @media (max-width:600px){
   .create-box form{flex-direction:column}
   .edit-form{flex-direction:column}
