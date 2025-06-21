@@ -13,3 +13,5 @@ This project is a dynamic and responsive Todo List web application built using *
 - ✅ Uses correct HTTP methods: `POST`, `PUT`, `DELETE`, `PATCH`
 - ✅ Built using EJS for dynamic templating and Express for routing
 - ✅ Modular code structure (partials, public assets, views)
+
+DEPLOYMENT LINK - https://todo-list-app-sp00.onrender.com
